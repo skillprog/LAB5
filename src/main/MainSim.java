@@ -1,16 +1,12 @@
 import carwash.CarWashState;
 import carwash.CarWashView;
-import random.ExponentialRandomStream;
-import random.UniformRandomStream;
 import simulator.*;
 
 public class MainSim {
     public static void main(String[] args) {
 
-        SimState carWashState = new CarWashState(
-                new ExponentialRandomStream(1.5, 1234),
-                new UniformRandomStream(4.5, 9.5, 1234));
-        SimView carWashView = new CarWashView();
+        CarWashState carWashState = new CarWashState(1.5, 8.5, 10.6, 2.2, 4.4, 1234);
+        SimView carWashView = new CarWashView(carWashState);
         Simulator simulator = new Simulator(carWashState, carWashView);
 
         simulator.start();

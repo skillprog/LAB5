@@ -26,18 +26,20 @@ public class Simulator {
         linkedList.add(startEvent);
         linkedList.add(stopEvent);
 
-        linkedList.stream()
-                .forEach(e -> System.out.println(e.toString()));
 
-        int debugCounter = 0;
+        view.printHeader();
+
+        // TODO refactor to a do / while loop
+
         while (true){
             SimEvent currentEvent = linkedList.get(0);
-            if("STOP".equals(currentEvent.toString())){
-                break;
-            }
+
+            if("STOP".equals(currentEvent.toString())){ break; }
             System.out.println("" + currentEvent.toString() +", time: " + currentEvent.getTime());
             linkedList = linkedList.pop().execute(linkedList, this.state);
         }
+
+        view.printFooter();
     }
 
 

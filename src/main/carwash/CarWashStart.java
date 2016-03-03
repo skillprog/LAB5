@@ -24,7 +24,6 @@ public class CarWashStart implements SimEvent {
     @Override
     public LinkedList<SimEvent> execute(LinkedList<SimEvent> linkedList, SimState state) {
         this.state = state;
-        this.state.setElapsedSimulationTime(0.001);
         System.out.println("Exectued CarWashStart");
         System.out.println("appending carwasharrive to new list");
         linkedList.add(new CarWashArrive(this.state));

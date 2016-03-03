@@ -1,10 +1,8 @@
 package simulator;
 
 public interface SimState{
-    SimEvent addStartEvent();
-    SimEvent addStopEvent(double time);
     double getArrivalTime();
-    void setElapsedSimulationTime(double time);
+    void addToElapsedSimulationTime(double time);
     double getElapsedTime();
     double getLeaveTime();
 }

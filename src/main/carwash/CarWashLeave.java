@@ -12,6 +12,7 @@ public class CarWashLeave implements SimEvent {
     double time;
 
     public CarWashLeave(SimState state) {
+        // TODO slowWash fastWASH delegation
         this.time = state.getElapsedTime() + state.getLeaveTime();
     }
 

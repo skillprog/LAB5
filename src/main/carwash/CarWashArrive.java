@@ -18,7 +18,7 @@ public class CarWashArrive implements SimEvent {
         double elapsed = this.state.getElapsedTime() + this.state.getArrivalTime();
 
         this.time = elapsed;
-        this.state.setElapsedSimulationTime(elapsed);
+        this.state.addToElapsedSimulationTime(elapsed);
     }
 
 
